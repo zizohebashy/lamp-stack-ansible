@@ -1,0 +1,24 @@
+---
+- name: Enable and start firewalld
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: Allow HTTP (port 80)
+  firewalld:
+    port: 80/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes
+
+- name: Allow HTTPS (port 443)
+  firewalld:
+    port: 443/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes
+
+- name: Reload firewalld to apply changes
+  firewalld:
+    state: reloaded

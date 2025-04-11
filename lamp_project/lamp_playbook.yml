@@ -1,0 +1,11 @@
+---
+- name: LAMP Stack Installation on CentOS
+  hosts: lamp_servers
+  become: true
+  strategy: free
+
+  roles:
+    - apache
+    - mysql
+    - php
+    - firewall

@@ -1,0 +1,5 @@
+---
+- name: Set MySQL root password (basic)
+  shell: mysqladmin -u root password 'RootPass123'
+  args:
+    creates: /var/lib/mysql/.mysql_secure_done

@@ -1,0 +1,5 @@
+---
+- name: Install MySQL Server
+  yum:
+    name: mysql-server
+    state: present

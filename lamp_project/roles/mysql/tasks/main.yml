@@ -1,0 +1,16 @@
+---
+- name: Install MySQL Server
+  yum:
+    name: mysql-server
+    state: present
+
+- name: Start and enable MySQL
+  service:
+    name: mysqld
+    state: started
+    enabled: true
+
+- name: Set MySQL root password (basic)
+  shell: mysqladmin -u root password 'RootPass123'
+  args:
+    creates: /var/lib/mysql/.mysql_secure_done
