@@ -1,5 +1,5 @@
 ---
-- name: LAMP Stack Installation on CentOS
+- name: LAMP Stack Installation on fedora
   hosts: lamp_servers
   become: true
   strategy: free
